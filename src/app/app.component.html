@@ -33,6 +33,10 @@
             >{{ gender }}
           </label>
         </div>
+        <div>
+          <h4>Your hobbies</h4>
+          <button class="btn btn-default" type="button" (click)="onAddHobby()"></button>
+        </div>
         <span
           *ngIf="!signupForm.valid && signupForm.touched" class="help-block"> Please enter valid gender! </span>
 
