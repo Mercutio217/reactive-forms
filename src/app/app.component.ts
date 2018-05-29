@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Observable} from 'rxjs/Observable';
 
 
 
@@ -43,5 +44,17 @@ export class AppComponent implements OnInit {
     }
       return null;
 
+  }
+
+  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
+    const promise = new Promise<any>(
+      (resolve, reject) => setTimeout(() => {
+        if (control.value === 'test@test.com') {
+          resolve({'emailIsForbidden' : true});
+        } else {
+          resolve(null);
+        }
+      }, 1500));
+    return promise;
   }
 }
