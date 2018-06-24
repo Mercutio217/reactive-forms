@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
       'gender': 'male',
       'hobbies': []
 
-    })
+    });
   }
 
 
